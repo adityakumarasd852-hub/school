@@ -81,21 +81,23 @@ export default function AdmissionsPage() {
   const [successMsg, setSuccessMsg] = useState("");
   const [serverError, setServerError] = useState("");
 
-  const mailtoHref = `mailto:adityakumarasd852@gmail.com?subject=${encodeURIComponent(
-    `School Enquiry: ${form.parentName || "Parent"} (${form.studentGrade || "Grade not selected"})`
-  )}&body=${encodeURIComponent(
-    [
-      `Parent Name: ${form.parentName}`,
-      `Parent Email: ${form.parentEmail}`,
-      `Mobile Number: ${form.mobileNumber}`,
-      `Student Name: ${form.studentName}`,
-      `Student Grade: ${form.studentGrade}`,
-      `Preferred Callback Time: ${form.preferredCallback || "Not specified"}`,
-      "",
-      "Message:",
-      form.message || "No message"
-    ].join("\n")
-  )}`;
+  const emailTo = "adityakumarasd852@gmail.com";
+  const emailSubject = `School Enquiry: ${form.parentName || "Parent"} (${form.studentGrade || "Grade not selected"})`;
+  const emailBody = [
+    `Parent Name: ${form.parentName}`,
+    `Parent Email: ${form.parentEmail}`,
+    `Mobile Number: ${form.mobileNumber}`,
+    `Student Name: ${form.studentName}`,
+    `Student Grade: ${form.studentGrade}`,
+    `Preferred Callback Time: ${form.preferredCallback || "Not specified"}`,
+    "",
+    "Message:",
+    form.message || "No message"
+  ].join("\n");
+  const mailtoHref = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(
+    emailSubject
+  )}&body=${encodeURIComponent(emailBody)}`;
 
   useEffect(() => {
     const enquiryTopic = new URLSearchParams(window.location.search).get("enquiry") || "";
@@ -116,31 +118,16 @@ export default function AdmissionsPage() {
 
     setSending(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/adityakumarasd852@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          _subject: `School Enquiry: ${form.parentName || "Parent"} (${form.studentGrade || "Grade"})`,
-          _template: "table",
-          _captcha: "false",
-          parentName: form.parentName,
-          parentEmail: form.parentEmail,
-          mobileNumber: form.mobileNumber,
-          studentName: form.studentName,
-          studentGrade: form.studentGrade,
-          preferredCallback: form.preferredCallback || "Not specified",
-          message: form.message || "No message"
-        })
-      });
-      const data = (await res.json()) as { success?: string; message?: string };
-      if (!res.ok || data.success !== "true") {
-        setServerError(data.message || "Unable to submit enquiry right now. Please try again.");
-        return;
+      const tab = window.open(gmailHref, "_blank", "noopener,noreferrer");
+      if (!tab) {
+        window.location.href = mailtoHref;
+        setSuccessMsg("Email app opened. Please click Send to complete your enquiry.");
+      } else {
+        setSuccessMsg("Gmail compose opened. Please click Send to complete your enquiry.");
       }
-      setSuccessMsg("Enquiry sent successfully. Our admissions team will contact you shortly.");
       setForm(initialForm(""));
     } catch {
-      setServerError("Network error. Please try again.");
+      setServerError("Could not open email compose automatically. Please use the buttons below.");
     } finally {
       setSending(false);
     }
@@ -222,7 +209,9 @@ export default function AdmissionsPage() {
 
           <div className="rounded-3xl bg-forest p-7 text-white shadow-soft">
             <h3 className="mb-2 text-5xl leading-tight">Request a Callback</h3>
-            <p className="mb-6 text-white/85">We will send your enquiry directly to admissions and contact you soon.</p>
+            <p className="mb-6 text-white/85">
+              Fill details and we will open your email composer with everything prefilled for quick sending.
+            </p>
 
             {successMsg && <p className="mb-4 rounded-xl bg-leaf/20 p-3 text-sm text-green-100">{successMsg}</p>}
             {serverError && (
@@ -361,6 +350,22 @@ export default function AdmissionsPage() {
                   {sending ? "Submitting..." : "Submit Enquiry"}
                 </span>
               </button>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <a
+                  href={gmailHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="interactive inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20"
+                >
+                  Open Gmail
+                </a>
+                <a
+                  href={mailtoHref}
+                  className="interactive inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20"
+                >
+                  Open Email App
+                </a>
+              </div>
               <p className="text-xs text-white/75">Your enquiry will be sent to: adityakumarasd852@gmail.com</p>
             </form>
           </div>
