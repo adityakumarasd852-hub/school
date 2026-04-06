@@ -130,55 +130,62 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="absolute inset-0 object-cover scale-105 saturate-[0.64] brightness-[0.86] contrast-[1.02]"
+            className="absolute inset-0 object-cover scale-[1.12] saturate-[0.58] brightness-[0.74] contrast-[1.08]"
           />
           <motion.video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-14"
+            className="absolute inset-0 h-full w-full object-cover opacity-20"
             poster="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=2200"
             animate={{ scale: [1, 1.06, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
             <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-campus-1579/1080p.mp4" type="video/mp4" />
           </motion.video>
-          <div className="floating-particles absolute inset-0 opacity-20" />
-          <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,87,57,0.64)_0%,rgba(10,96,62,0.58)_45%,rgba(15,118,78,0.5)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_88%_16%,rgba(255,255,255,0.2),transparent_44%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/8 via-transparent to-black/26" />
+          <div className="floating-particles absolute inset-0 opacity-26" />
+          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(4,68,44,0.78)_0%,rgba(8,92,60,0.62)_44%,rgba(14,115,76,0.56)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_14%,rgba(255,255,255,0.24),transparent_42%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_58%,rgba(2,24,15,0.45),transparent_54%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
+          <div className="hero-film absolute inset-0" />
 
           <div className="section-pad relative z-10 mx-auto grid w-full max-w-[1400px] gap-12 text-white lg:grid-cols-2">
-            <div className="max-w-xl">
-              <p className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-gold">
-                Welcome to Our School
-              </p>
-              <h1 className="mb-5 text-4xl font-bold leading-tight md:text-5xl xl:text-6xl">
-                {"Shaping Future Leaders with Excellence".split(" ").map((w, i) => (
-                  <span key={i} className="hero-word mr-3 inline-block">
-                    {w}
-                  </span>
-                ))}
-              </h1>
-              <p className="mb-8 max-w-lg text-sm text-white/85 md:text-base">
-                A premium learning ecosystem where academic rigor meets innovation, sportsmanship, creativity, and
-                values-driven growth.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <GlowLinkButton text="Explore About" href="/about" />
-                <GlowLinkButton text="Admission Open 2026-27" href="/admissions" />
+            <div className="max-w-2xl">
+              <div className="hero-panel rounded-3xl p-6 md:p-8">
+                <p className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-gold">
+                  Welcome to Our School
+                </p>
+                <h1 className="hero-title mb-5 text-4xl font-bold leading-tight md:text-5xl xl:text-6xl">
+                  {"Shaping Future Leaders with Excellence".split(" ").map((w, i) => (
+                    <span key={i} className="hero-word mr-3 inline-block">
+                      {w}
+                    </span>
+                  ))}
+                </h1>
+                <p className="hero-copy mb-8 max-w-lg text-sm text-white/90 md:text-base">
+                  A premium learning ecosystem where academic rigor meets innovation, sportsmanship, creativity, and
+                  values-driven growth.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <GlowLinkButton text="Explore About" href="/about" />
+                  <GlowLinkButton text="Admission Open 2026-27" href="/admissions" />
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 self-end lg:pl-10">
+            <div className="grid grid-cols-2 gap-5 self-end lg:pl-6">
               {[
                 { value: "20+", label: "Years of Excellence" },
                 { value: "5000+", label: "Students" },
                 { value: "100+", label: "Faculty Members" },
                 { value: "50+", label: "Awards" }
               ].map((stat) => (
-                <div key={stat.label} className="glass hero-stat-card rounded-2xl p-5 shadow-soft">
+                <div
+                  key={stat.label}
+                  className="glass hero-stat-card rounded-2xl p-5 shadow-soft transition duration-300 hover:-translate-y-0.5"
+                >
                   <p className="mb-1 text-3xl font-semibold text-gold hero-stat-value">{stat.value}</p>
                   <p className="text-base font-medium text-white hero-stat-label">{stat.label}</p>
                 </div>
