@@ -77,8 +77,11 @@ h6 {
 }
 
 .hero-stat-card {
-  background: linear-gradient(145deg, rgba(6, 44, 28, 0.55), rgba(10, 65, 42, 0.42));
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(145deg, rgba(6, 36, 24, 0.68), rgba(8, 55, 37, 0.56));
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
 .hero-stat-value {

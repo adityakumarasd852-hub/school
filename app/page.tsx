@@ -123,29 +123,30 @@ export default function HomePage() {
       <main className="relative">
         <SiteNavbar />
 
-        <section className="noise relative flex min-h-screen items-center overflow-hidden pt-24" id="home">
+        <section className="relative flex min-h-screen items-center overflow-hidden pt-24" id="home">
           <Image
             src="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=2200"
             alt="Premium school campus background"
             fill
             priority
             sizes="100vw"
-            className="absolute inset-0 object-cover scale-105"
+            className="absolute inset-0 object-cover scale-105 saturate-[0.78] brightness-[0.72] contrast-[1.04]"
           />
           <motion.video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-45"
+            className="absolute inset-0 h-full w-full object-cover opacity-24"
             poster="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=2200"
             animate={{ scale: [1, 1.06, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
             <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-campus-1579/1080p.mp4" type="video/mp4" />
           </motion.video>
-          <div className="floating-particles absolute inset-0 opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest/82 via-forest/70 to-forest/60" />
+          <div className="floating-particles absolute inset-0 opacity-35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#062c1d]/90 via-[#0a4b31]/80 to-[#0a4b31]/72" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
 
           <div className="section-pad relative z-10 mx-auto grid w-full max-w-[1400px] gap-12 text-white lg:grid-cols-2">
             <div className="max-w-xl">

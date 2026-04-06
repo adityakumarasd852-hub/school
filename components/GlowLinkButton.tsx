@@ -23,9 +23,9 @@ export default function GlowLinkButton({ text, href, className = "" }: GlowLinkB
           y: ((e.clientY - rect.top) / rect.height) * 100
         });
       }}
-      className={`interactive group relative inline-flex items-center overflow-hidden rounded-full border border-gold/70 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-glow ${className}`}
+      className={`interactive group relative inline-flex items-center overflow-hidden rounded-full border border-gold/50 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,0,0,0.28)] ${className}`}
       style={{
-        backgroundImage: `radial-gradient(circle at ${xy.x}% ${xy.y}%, rgba(217,180,74,0.42), rgba(11,93,59,0.95) 45%)`
+        backgroundImage: `radial-gradient(circle at ${xy.x}% ${xy.y}%, rgba(217,180,74,0.24), rgba(10,74,49,0.96) 42%, rgba(8,61,40,0.98) 100%)`
       }}
     >
       <span className="relative z-10 inline-flex items-center gap-2">
@@ -35,4 +35,3 @@ export default function GlowLinkButton({ text, href, className = "" }: GlowLinkB
     </Link>
   );
 }
-
