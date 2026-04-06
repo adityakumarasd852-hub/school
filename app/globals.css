@@ -77,19 +77,19 @@ h6 {
 }
 
 .hero-stat-card {
-  background: linear-gradient(145deg, rgba(6, 36, 24, 0.68), rgba(8, 55, 37, 0.56));
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(145deg, rgba(8, 78, 52, 0.46), rgba(8, 66, 45, 0.28));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 24px rgba(3, 30, 19, 0.22);
 }
 
 .hero-stat-value {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.34);
 }
 
 .hero-stat-label {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.52);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes drift {

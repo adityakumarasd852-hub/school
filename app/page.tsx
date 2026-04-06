@@ -130,23 +130,24 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="absolute inset-0 object-cover scale-105 saturate-[0.78] brightness-[0.72] contrast-[1.04]"
+            className="absolute inset-0 object-cover scale-105 saturate-[0.64] brightness-[0.86] contrast-[1.02]"
           />
           <motion.video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-24"
+            className="absolute inset-0 h-full w-full object-cover opacity-14"
             poster="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=2200"
             animate={{ scale: [1, 1.06, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
             <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-campus-1579/1080p.mp4" type="video/mp4" />
           </motion.video>
-          <div className="floating-particles absolute inset-0 opacity-35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#062c1d]/90 via-[#0a4b31]/80 to-[#0a4b31]/72" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
+          <div className="floating-particles absolute inset-0 opacity-20" />
+          <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,87,57,0.64)_0%,rgba(10,96,62,0.58)_45%,rgba(15,118,78,0.5)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_88%_16%,rgba(255,255,255,0.2),transparent_44%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/8 via-transparent to-black/26" />
 
           <div className="section-pad relative z-10 mx-auto grid w-full max-w-[1400px] gap-12 text-white lg:grid-cols-2">
             <div className="max-w-xl">
