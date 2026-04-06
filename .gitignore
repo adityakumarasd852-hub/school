@@ -1,0 +1,19 @@
+﻿# dependencies
+node_modules/
+
+# next build output
+.next/
+out/
+
+# logs
+*.log
+.dev.log
+.dev.err
+
+# environment
+.env.local
+.env.*.local
+
+# misc
+.DS_Store
+.vscode/
