@@ -76,6 +76,19 @@ h6 {
   animation: drift 24s linear infinite;
 }
 
+.hero-stat-card {
+  background: linear-gradient(145deg, rgba(6, 44, 28, 0.55), rgba(10, 65, 42, 0.42));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-stat-value {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.hero-stat-label {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.52);
+}
+
 @keyframes drift {
   from {
     transform: translateY(0);

@@ -145,7 +145,7 @@ export default function HomePage() {
             <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-campus-1579/1080p.mp4" type="video/mp4" />
           </motion.video>
           <div className="floating-particles absolute inset-0 opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest/75 via-forest/60 to-forest/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest/82 via-forest/70 to-forest/60" />
 
           <div className="section-pad relative z-10 mx-auto grid w-full max-w-[1400px] gap-12 text-white lg:grid-cols-2">
             <div className="max-w-xl">
@@ -176,9 +176,9 @@ export default function HomePage() {
                 { value: "100+", label: "Faculty Members" },
                 { value: "50+", label: "Awards" }
               ].map((stat) => (
-                <div key={stat.label} className="glass rounded-2xl p-5 shadow-soft">
-                  <p className="mb-1 text-3xl font-semibold text-gold">{stat.value}</p>
-                  <p className="text-sm text-white/85">{stat.label}</p>
+                <div key={stat.label} className="glass hero-stat-card rounded-2xl p-5 shadow-soft">
+                  <p className="mb-1 text-3xl font-semibold text-gold hero-stat-value">{stat.value}</p>
+                  <p className="text-base font-medium text-white hero-stat-label">{stat.label}</p>
                 </div>
               ))}
             </div>
